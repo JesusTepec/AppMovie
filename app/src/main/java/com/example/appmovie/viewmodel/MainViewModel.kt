@@ -5,16 +5,26 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.appmovie.API_KEY
 import com.example.appmovie.TOKEN
+import com.example.appmovie.di.DaggerAppComponent
+import com.example.appmovie.di.module.MovieRepositoryModule
 import io.reactivex.rxjava3.observers.DisposableSingleObserver
 import model.Movie
 import model.MovieResponse
 import com.example.appmovie.repository.MovieRepository
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import javax.inject.Inject
 
 class MainViewModel(context: Context) : ViewModel() {
 
-    private var repository: MovieRepository = MovieRepository(context)
+    @Inject lateinit var repository: MovieRepository
     private val disposables = CompositeDisposable()
+
+    init {
+        DaggerAppComponent
+            .builder().movieRepositoryModule(MovieRepositoryModule(context))
+            .build().inject(this)
+    }
+
 
     fun getPlayNow() : MutableLiveData<List<Movie>> {
 

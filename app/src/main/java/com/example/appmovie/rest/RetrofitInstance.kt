@@ -1,6 +1,7 @@
 package com.example.appmovie.rest
 
 import android.content.Context
+import com.example.appmovie.AppMovie
 import com.readystatesoftware.chuck.ChuckInterceptor
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import okhttp3.OkHttpClient

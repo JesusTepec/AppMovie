@@ -7,8 +7,9 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.schedulers.Schedulers
 import model.MovieResponse
+import javax.inject.Inject
 
-class MovieRepository(context: Context) {
+class MovieRepository @Inject constructor (context: Context) {
 
     private var restApi: ApiService = RetrofitInstance.getApiService(context)
 
