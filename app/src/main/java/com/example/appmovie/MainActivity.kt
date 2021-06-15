@@ -2,14 +2,11 @@ package com.example.appmovie
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.appmovie.adapters.MovieAdapter
 import com.example.appmovie.databinding.ActivityMainBinding
-import com.example.appmovie.di.DaggerAppComponent
 import com.example.appmovie.viewmodel.MainViewModel
 import model.Movie
-import javax.inject.Inject
 
 
 class MainActivity : BaseActivity() {

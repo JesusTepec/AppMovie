@@ -16,9 +16,5 @@ class MovieRepositoryModule(@Named("context") val context: Context) {
         return MovieRepository(context)
     }
 
-    @Provides
-    @Named("context")
-    fun context(): Context {
-        return context
-    }
+
 }

@@ -27,9 +27,7 @@ class MainViewModel(context: Context) : ViewModel() {
 
 
     fun getPlayNow() : MutableLiveData<List<Movie>> {
-
         val liveDataResponse = MutableLiveData<List<Movie>>()
-
         disposables.add(
             repository.getPlayNow(TOKEN, API_KEY, "en-US", 1).subscribeWith(object : DisposableSingleObserver<MovieResponse>(){
                 override fun onSuccess(response: MovieResponse?) {
